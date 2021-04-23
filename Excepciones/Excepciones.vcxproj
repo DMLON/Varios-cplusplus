@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0ac90b3e-7afc-4e9b-9322-c8685fe6bc25}</ProjectGuid>
-    <RootNamespace>Static</RootNamespace>
+    <ProjectGuid>{304868e2-39a5-4e87-a62b-a7c1acc9abaa}</ProjectGuid>
+    <RootNamespace>Excepciones</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,16 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ciudad.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="cHospital.cpp" />
+    <ClCompile Include="cLista.cpp" />
+    <ClCompile Include="cPaciente.cpp" />
+    <ClCompile Include="InListException.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ciudad.h" />
+    <ClInclude Include="cHospital.h" />
     <ClInclude Include="cLista.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Defines.h" />
+    <ClInclude Include="cPaciente.h" />
+    <ClInclude Include="InListException.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -23,7 +23,6 @@ int main() {
 	Ciudad* ciudad_ej = Ciudad::getLista_Ciudades().BuscarItem("Buenos Aires");
 
 	//delete ciudad_ej;
-
 	Ciudad::getLista_Ciudades().Listar();
 
 	//Ejemplo si se me ocurre agregar otra lista

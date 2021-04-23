@@ -1,25 +1,26 @@
-﻿#include "Lista.h"
-#include "cCiudad.h"
-unsigned int Lista_ciudades::getTAM()
+#include "cLista.h"
+#include "cPaciente.h"
+
+unsigned int ListaPacientes::getTAM()
 {
 	return TAM;
 }
 
-unsigned int Lista_ciudades::getCA()
+unsigned int ListaPacientes::getCA()
 {
 	return CA;
 }
 ///////////
 
-void Lista_ciudades::Redimensionalizar()
+void ListaPacientes::Redimensionalizar()
 {
 }
 
 
 
-Lista_ciudades::Lista_ciudades(unsigned int TAM)
+ListaPacientes::ListaPacientes(unsigned int TAM)
 {
-	vector = new cCiudad * [TAM];
+	vector = new cPaciente * [TAM];
 	for (unsigned int i = 0; i < TAM; i++)
 	{
 		vector[i] = NULL;
@@ -28,7 +29,7 @@ Lista_ciudades::Lista_ciudades(unsigned int TAM)
 	CA = 0;
 }
 
-Lista_ciudades::~Lista_ciudades()
+ListaPacientes::~ListaPacientes()
 {
 	if (vector != NULL)
 	{
@@ -44,21 +45,21 @@ Lista_ciudades::~Lista_ciudades()
 }
 
 
-void Lista_ciudades::Listar()
+void ListaPacientes::Listar()
 {
 
 	for (unsigned int i = 0; i < CA; i++)
 	{
-		vector[i]->Imprimir();// imprimir
+		//vector[i]->Imprimir();// imprimir
 	}
 }
 
-
-bool Lista_ciudades::AgregarItem(cCiudad* item)
+#include "InListException.h"
+bool ListaPacientes::AgregarItem(cPaciente* item)
 {
 
-	cCiudad* i_f = BuscarItem(item->getclave());
-	if (i_f != NULL)throw new exception((item->getclave() + ": Ya se encuentra en la lista").c_str());
+	cPaciente* i_f = BuscarItem(item->getclave());
+	if (i_f == NULL)throw new InListException(item->getclave(),true);
 
 	if (CA < TAM)
 		vector[CA++] = item;
@@ -67,7 +68,7 @@ bool Lista_ciudades::AgregarItem(cCiudad* item)
 }
 
 
-bool Lista_ciudades::AgregarItemOrdenado(const cCiudad* item)
+bool ListaPacientes::AgregarItemOrdenado(const cPaciente* item)
 {
 	/*for (unsigned int i = 0; i < CA; i++)
 	{
@@ -78,7 +79,7 @@ bool Lista_ciudades::AgregarItemOrdenado(const cCiudad* item)
 	return false;
 }
 
-cCiudad* Lista_ciudades::Quitar(string clave) {
+cPaciente* ListaPacientes::Quitar(string clave) {
 
 	unsigned int pos = getItemPos(clave);
 	if (pos >= CA)return NULL;
@@ -86,17 +87,17 @@ cCiudad* Lista_ciudades::Quitar(string clave) {
 
 }
 
-cCiudad* Lista_ciudades::Quitar(cCiudad* item) {
+cPaciente* ListaPacientes::Quitar(cPaciente* item) {
 	unsigned int pos = getItemPos(item->getclave());
 	if (pos >= CA)return NULL;
 	return QuitarenPos(pos);
 }
 
-cCiudad* Lista_ciudades::QuitarenPos(unsigned int pos) {
+cPaciente* ListaPacientes::QuitarenPos(unsigned int pos) {
 
 	if (pos >= CA)throw new exception("Posicion invalida");
 
-	cCiudad* aux = vector[pos];
+	cPaciente* aux = vector[pos];
 
 	for (unsigned int i = 0; i < CA - 1; i++)
 	{
@@ -110,7 +111,7 @@ cCiudad* Lista_ciudades::QuitarenPos(unsigned int pos) {
 
 
 
-void Lista_ciudades::Eliminar(string clave) {
+void ListaPacientes::Eliminar(string clave) {
 
 	unsigned int pos = getItemPos(clave);
 
@@ -120,15 +121,15 @@ void Lista_ciudades::Eliminar(string clave) {
 
 }
 
-void Lista_ciudades::Eliminar(cCiudad* item) {
+void ListaPacientes::Eliminar(cPaciente* item) {
 
 	Eliminar(item->getclave());
 }
 
-void Lista_ciudades::Eliminar(unsigned int pos) {
+void ListaPacientes::Eliminar(unsigned int pos) {
 	if (pos >= CA)return;// o Throw no pude eliminar
 
-	cCiudad* dato = QuitarenPos(pos);
+	cPaciente* dato = QuitarenPos(pos);
 
 	if (dato != NULL)
 		delete dato;
@@ -139,7 +140,7 @@ void Lista_ciudades::Eliminar(unsigned int pos) {
 }
 
 
-cCiudad* Lista_ciudades::BuscarItem(string clave)
+cPaciente* ListaPacientes::BuscarItem(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
@@ -150,14 +151,14 @@ cCiudad* Lista_ciudades::BuscarItem(string clave)
 }
 
 
-cCiudad* Lista_ciudades::getItem(unsigned int pos)
+cPaciente* ListaPacientes::getItem(unsigned int pos)
 {
 	if (pos < CA)
 		return vector[pos];
 	else return NULL;
 }
 
-unsigned int Lista_ciudades::getItemPos(string clave)
+unsigned int ListaPacientes::getItemPos(string clave)
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
