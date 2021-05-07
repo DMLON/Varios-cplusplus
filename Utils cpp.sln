@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BuscarTipo Template", "Proj
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Excepciones", "Excepciones\Excepciones.vcxproj", "{304868E2-39A5-4E87-A62B-A7C1ACC9ABAA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Template", "Template\Template.vcxproj", "{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{304868E2-39A5-4E87-A62B-A7C1ACC9ABAA}.Release|x64.Build.0 = Release|x64
 		{304868E2-39A5-4E87-A62B-A7C1ACC9ABAA}.Release|x86.ActiveCfg = Release|Win32
 		{304868E2-39A5-4E87-A62B-A7C1ACC9ABAA}.Release|x86.Build.0 = Release|Win32
+		{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}.Debug|x64.ActiveCfg = Debug|x64
+		{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}.Debug|x64.Build.0 = Debug|x64
+		{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}.Debug|x86.ActiveCfg = Debug|Win32
+		{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}.Debug|x86.Build.0 = Debug|Win32
+		{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}.Release|x64.ActiveCfg = Release|x64
+		{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}.Release|x64.Build.0 = Release|x64
+		{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}.Release|x86.ActiveCfg = Release|Win32
+		{97A4E7DF-E9D3-4DD9-830D-18ED8D808BC2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

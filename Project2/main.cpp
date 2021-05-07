@@ -12,7 +12,7 @@ int main() {
 	lista.AgregarItem(new cHijo1(77, "e"));
 
 
-	cPadre* ptr = lista.BuscarPorTipo<cHijo1>(1);
+	cPadre* ptr = lista.BuscarPorTipo<cHijo1,string>("c");
 	if (ptr != NULL) {
 		ptr->HacerAlgo();
 		cout << ptr->to_string();

@@ -34,12 +34,12 @@ public:
 	unsigned int getCA();
 	unsigned int getTAM();
 
-	template<class B>
-	T* BuscarPorTipo(string clave);
+	template<class B,class KEY>
+	T* BuscarPorTipo(KEY clave);
 
 	//Devuelve el primer objeto (+offset) que sea del tipo buscado
 	template<class B>
-	T* BuscarPorTipo(int offset=0);
+	T* BuscarPorTipo_offset(int offset=0);
 };
 
 template<class T>
@@ -189,8 +189,8 @@ unsigned int cListaT<T>::getItemPos(string clave)
 }
 
 template<class T>
-template<class B>
-inline T* cListaT<T>::BuscarPorTipo(string clave)
+template<class B, class KEY>
+inline T* cListaT<T>::BuscarPorTipo(KEY clave)
 {
 	for (int i = 0; i < CA; ++i) {
 		if (dynamic_cast<B*>(vector[i]) != NULL) {
@@ -203,7 +203,7 @@ inline T* cListaT<T>::BuscarPorTipo(string clave)
 
 template<class T>
 template<class B>
-inline T* cListaT<T>::BuscarPorTipo(int offset)
+inline T* cListaT<T>::BuscarPorTipo_offset(int offset)
 {
 	int contador=0;
 	for (int i =0; i < CA; ++i) {
