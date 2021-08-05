@@ -37,10 +37,10 @@ int main() {
 
 #ifdef FORMA_2
 #ifndef FORMA_1
-	//Uso un puntero para simplemente generar ciudades, acá lo estoy pisando constantemente porque yo SE que se 
-	//está guardando dentro de la lista static, tener mucho cuidado con esto y COMENTARLO siempre que se haga
-	//Sino uno se puede olvidar que lo está haciendo y empiezan los problemas de memoria
-	//Por eso mismo yo recomiendo la forma1, es un poco más intuitiva que hacer new de la nada
+	//Uso un puntero para simplemente generar ciudades, aca lo estoy pisando constantemente porque yo SE que se 
+	//esta guardando dentro de la lista static, tener mucho cuidado con esto y COMENTARLO siempre que se haga
+	//Sino uno se puede olvidar que lo esta haciendo y empiezan los problemas de memoria
+	//Por eso mismo yo recomiendo la forma1, es un poco mas intuitiva que hacer new de la nada
 	Ciudad* ptr_helper;
 	ptr_helper = new Ciudad("Buenos aires", 2000000, -55, -52);
 	ptr_helper = new Ciudad("Buenos aires1", 2000000, -55, -52);
@@ -50,7 +50,7 @@ int main() {
 	ptr_helper = new Ciudad("Buenos aires5", 2000000, -55, -52);
 
 	delete ptr_helper;
-	//Utilizo la lista sin más
+	//Utilizo la lista sin mas
 	Ciudad* ciudad_ej = Ciudad::getLista_Ciudades().BuscarItem("Buenos Aires");
 
 	Ciudad::getLista_Ciudades().Listar();
@@ -68,31 +68,6 @@ int main() {
 #endif // FORMA_2
 #endif // FORMA_1
 
-
-	/*
-	cLista<Ciudad> listita(5);
-	listita.AgregarItem(new Ciudad("Buenos aires", 2000000, -55, -52));
-
-
-	try {
-		listita.AgregarItem(new Ciudad("Buenos aires", 2000000, -55, -52));
-	}
-	catch (exception* ex) {
-		cerr << ex->what() << endl;
-	}
-	catch (...) {
-		cerr << "Error generico";
-	}
-
-	for (int i = 0; i < 10; ++i) {
-		try {
-			listita.AgregarItem(new Ciudad("Buenos aires"+to_string(i), 2000000, -55, -52));
-		}
-		catch (exception* ex) {
-			cerr << ex->what()<< ", En pos: "<< i << endl;
-		}
-	}
-	*/
 	string a;
 	cin >> a;
 }

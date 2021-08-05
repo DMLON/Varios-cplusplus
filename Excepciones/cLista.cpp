@@ -10,12 +10,6 @@ unsigned int ListaPacientes::getCA()
 {
 	return CA;
 }
-///////////
-
-void ListaPacientes::Redimensionalizar()
-{
-}
-
 
 
 ListaPacientes::ListaPacientes(unsigned int TAM)
@@ -68,17 +62,6 @@ bool ListaPacientes::AgregarItem(cPaciente* item)
 }
 
 
-bool ListaPacientes::AgregarItemOrdenado(const cPaciente* item)
-{
-	/*for (unsigned int i = 0; i < CA; i++)
-	{
-	if (vector[i]->getclave() == clave)
-	return vector[i];
-	}
-	*/
-	return false;
-}
-
 cPaciente* ListaPacientes::Quitar(string clave) {
 
 	unsigned int pos = getItemPos(clave);
@@ -117,8 +100,6 @@ void ListaPacientes::Eliminar(string clave) {
 
 	if (pos < CA)
 		Eliminar(pos);
-	//sino algo
-
 }
 
 void ListaPacientes::Eliminar(cPaciente* item) {
@@ -127,7 +108,7 @@ void ListaPacientes::Eliminar(cPaciente* item) {
 }
 
 void ListaPacientes::Eliminar(unsigned int pos) {
-	if (pos >= CA)return;// o Throw no pude eliminar
+	if (pos >= CA)return;
 
 	cPaciente* dato = QuitarenPos(pos);
 

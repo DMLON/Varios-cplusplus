@@ -38,7 +38,7 @@ bool ListaStrings::AgregarItem(string* item)
 {
 	if (CA < TAM)
 		vector[CA++] = item;
-	else throw new exception("No hay tama�o suficiente para agregar el item");;
+	else throw new exception("No hay tamaño suficiente para agregar el item");;
 	return true;
 }
 

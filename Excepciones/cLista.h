@@ -10,14 +10,11 @@ protected:
 	cPaciente** vector;
 	unsigned int CA, TAM;
 
-
-	void Redimensionalizar();
 public:
 	ListaPacientes(unsigned int TAM = NMAX);
 	~ListaPacientes();
 
 	bool AgregarItem(cPaciente* item);
-	bool AgregarItemOrdenado(const cPaciente* item);
 
 	cPaciente* Quitar(string clave);
 	cPaciente* Quitar(cPaciente* item);
